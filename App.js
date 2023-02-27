@@ -13,10 +13,24 @@ export default function App() {
   );
 }
 
+const Stack = createNativeStackNavigator();
+
+function RootNavigation(){
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="SobreScreen" component={SobreScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
+
 function HomeScreen() {
   return (
     <View style={styles.header}>
       <Text style={{color: '#fff'}}>Sou a homescreen</Text>
+      <Button mode="contained">ir para o sobre</Button>
     </View>
   );
 }
